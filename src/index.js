@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import "bootstrap/dist/css/bootstrap.min.css"
+import './Style.css'
+import store from './store';
+import {Provider} from "react-redux"
+store.subscribe(()=>console.log(store.getState()))
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <h3 className='text'>React Form</h3>
+    <Provider store={store}>
     <App />
+    </Provider>
   </React.StrictMode>
 );
 
